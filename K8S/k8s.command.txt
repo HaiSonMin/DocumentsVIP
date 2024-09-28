@@ -1,0 +1,87 @@
+# K9s
+curl -sS https://webi.sh/k9s | sh -> Download
+
+# Minikube
+minikube restart
+minikube delete
+minikube start
+minikube status
+
+# kubectl
+- Command extend
+kubectl apply -f {file-name} | kubectl apply -f {folder-name}
+kubectl delete -f {file-name} | kubectl delete -f {folder-name}
+kubectl logs -f {file-name}
+kubectl exec {pod-name} ls
+kubectl api-resources
+watch kubectl get all -o wide (Waiting all resources running on cluster)
+kubectl cluster-info 
+
+- Nodes: nodes|no 
+kubectl get no 
+kubectl get no -o wide
+kubectl describe no/{no-name}
+kubectl delete no/{no-name}
+
+- Pods: po|pods
+kubectl get pods|po 
+kubectl get pods|po -o wide
+kubectl get pods -n {namespaces} (Get pods in namespaces)
+kubectl describe po/{po-name}
+kubectl delete po/{po-name}
+kubectl delete po --all
+
+- ReplicaSet: replicasets|rs
+kubectl get rs
+kubectl get rs -o wide
+kubectl describe rs/{rs-name}
+kubectl delete rs/{rs-name}
+kubectl delete rs --all
+
+
+- Deployment: deployments|deploy 
+kubectl get deploy 
+kubectl get deploy -o wide
+kubectl describe deploy/{deploy-name}
+kubectl delete deploy/{deploy-name}
+kubectl delete deploy --all
+
+ku rollout history deploy/{deploy-name}
+ku rollout history deploy/{deploy-name} --revision={version-id}
+
+- Service: services|svc
+kubectl get svc 
+kubectl get svc -o wide => ping {svc-name}
+kubectl describe svc/{svc-name}
+kubectl delete svc/{svc-name}
+kubectl delete svc --all
+
+- Events: events|ev 
+kubectl get ev 
+kubectl get ev -o wide
+kubectl describe ev/{ev-name}
+kubectl delete ev/{ev-name}
+kubectl delete ev --all
+
+- HorizontalPodAutoScalers: horizontalpodautoscalers|hpa 
+kubectl get hpa 
+kubectl get hpa -o wide
+kubectl describe hpa/{hpa-name}
+kubectl delete hpa/{hpa-name}
+kubectl delete hpa/{hpa-name}
+kubectl delete hpa --all
+
+- Namespaces: namespaces | ns 
+kubectl get ns 
+kubectl get ns -o wide
+kubectl describe ns/{ns-name}
+kubectl delete ns/{ns-name}
+kubectl delete ns/{ns-name}
+kubectl delete ns --all
+
+- Metrics Server: 
+kubectl apply -f metrics-server-deployment.yaml (Waiting for 5minute for metrics server start run)
+kubectl top nodes | pods | deployments
+kubectl get apiservices (Checking)
+kubectl logs -n kube-system -l k8s-app=metrics-server (Checking)
+kubectl get clusterrolebinding | grep metrics-server (Checking)

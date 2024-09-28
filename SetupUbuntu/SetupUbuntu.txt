@@ -1,0 +1,2 @@
+sudo adduser bodevops -> Enter pass
+sudo usermod -aG sudo bodevops => Add user to group have role is "sudo"

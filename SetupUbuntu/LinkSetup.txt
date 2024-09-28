@@ -1,0 +1,6 @@
+Nginx: https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-22-04
+Mysql: https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-22-04
+Redis: https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-22-04
+Docker: https://docs.docker.com/engine/install/ubuntu/
+K8S: 
+ElasticSearch: https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-elasticsearch-on-ubuntu-22-04

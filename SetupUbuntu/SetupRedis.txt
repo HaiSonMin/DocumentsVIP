@@ -1,0 +1,11 @@
+https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-22-04
+
+sudo apt install redis-server -y
+
+sudo nano /etc/redis/redis.conf => supervised systemd
+
+sudo systemctl restart redis.service || sudo service redis restart
+
+sudo systemctl status redis || sudo service redis status
+
+redis-cli -> PING

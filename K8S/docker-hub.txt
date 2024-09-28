@@ -1,0 +1,3 @@
+docker login
+docker tag k8s-nginx-test:v1 mountainseadevops/k8s-nginx-test:v1
+docker push mountainseadevops/k8s-nginx-test:v1

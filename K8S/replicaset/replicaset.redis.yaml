@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs-redis
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rs-redis
+  template:
+    metadata:
+      name: rs-redis
+      labels:
+        app: rs-redis
+    spec:
+      containers:
+        - name: rs-redis
+          image: redis
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 6379

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs-mysql
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rs-mysql
+  template:
+    metadata:
+      name: rs-mysql
+      labels:
+        app: rs-mysql
+    spec:
+      containers:
+        - name: rs-mysql
+          image: mysql
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 3306

@@ -1,0 +1,13 @@
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install -y nodejs
+node -v
+sudo npm install -g n
+sudo npm install -g npm@latest
+
+--- 
+
+sudo npm install -g pm2
+
+---
+
+npm install --os=linux --cpu=x64 sharp

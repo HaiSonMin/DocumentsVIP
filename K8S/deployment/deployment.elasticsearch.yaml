@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: depl-elasticsearch
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: depl-elasticsearch
+  template:
+    metadata:
+      labels:
+        app: depl-elasticsearch
+    spec:
+      containers:
+        - name: depl-elasticsearch
+          image: elasticsearch
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 9200

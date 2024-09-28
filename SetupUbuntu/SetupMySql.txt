@@ -1,0 +1,15 @@
+sudo apt install mysql-server
+
+https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-22-04
+
+systemctl status mysql.service
+
+-- Command setup user
+CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON automation.* TO 'bodevops'@'localhost';
+GRANT ALL PRIVILEGES ON *.* TO 'bodevops'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+ALTER USER 'username'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+SELECT User, Host FROM mysql.user;
+DROP USER 'bodevops'@'host';

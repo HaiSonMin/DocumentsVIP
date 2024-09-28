@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: depl-redis
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: depl-redis
+  template:
+    metadata:
+      labels:
+        app: depl-redis
+    spec:
+      containers:
+        - name: depl-redis
+          image: redis
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 6379
